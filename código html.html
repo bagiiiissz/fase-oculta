@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Desafio Extra - Torneio Marineford&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .timer {
+            font-size: 50px;
+            color: #f1c40f;
+            margin: 20px;
+        }
+        .message {
+            font-size: 25px;
+            margin-top: 20px;
+        }
+        #extra-message {
+            display: none;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Desafio Extra do Torneio Marineford&lt;/h1&gt;
+    &lt;p class=&quot;message&quot;&gt;O tempo está correndo...&lt;/p&gt;
+
+    &lt;div class=&quot;timer&quot; id=&quot;timer&quot;&gt;&lt;/div&gt;
+
+    &lt;!-- A mensagem só vai aparecer após o tempo acabar --&gt;
+    &lt;p class=&quot;message&quot; id=&quot;extra-message&quot;&gt;
+        ⏳ O tempo acabou… mas a verdadeira batalha está só começando.&lt;br&gt;
+        Bem-vindo à Fase Oculta de Marineford.&lt;br&gt;
+        Você tem coragem de continuar?&lt;br&gt;&lt;br&gt;
+        ⚔️ A Última Batalha Se Aproxima:&lt;br&gt;
+        • As 2 maiores notas vão se enfrentar em um duelo épico pelo topo.&lt;br&gt;
+        • Os 3 que ficaram abaixo na pontuação terão uma segunda chance para lutar por 1 vaga na grande final.&lt;br&gt;&lt;br&gt;
+        O destino de Marineford está em jogo.&lt;br&gt;
+        Vocês estão prontos para a última tempestade?
+    &lt;/p&gt;
+
+    &lt;script&gt;
+        var countDownDate = new Date().getTime() + 75 * 60 * 60 * 1000;  // Timer de 75 horas
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById(&quot;timer&quot;).innerHTML = hours + &quot;h &quot; + minutes + &quot;m &quot; + seconds + &quot;s &quot;;
+
+            // Quando o tempo acabar, exibe a mensagem final
+            if (distance &lt; 0) {
+                clearInterval(x);
+                document.getElementById(&quot;timer&quot;).innerHTML = &quot;Tempo esgotado!&quot;;
+                document.getElementById(&quot;extra-message&quot;).style.display = &quot;block&quot;;  // Exibe a mensagem
+            }
+        }, 1000);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
